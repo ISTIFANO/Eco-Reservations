@@ -15,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('salle',SalleController::class);
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.Home');
+});
+Route::get('/Login', function () {
+    return view('pages.Login');
+});
+
+Route::get('/Signup', function () {
+    return view('pages.Signup');
 });

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Salle extends Model
 {
-    protected $fillable=['id','title','description','location','number','start_date','status','updated_at','created_at'];
+    protected $fillable=['id','title','description','location','number','start_date','status','updated_at','created_at','images'];
     use HasFactory;
 }
