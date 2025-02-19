@@ -16,7 +16,7 @@
     <div class="flex flex-col lg:flex-row items-center justify-center">
       <div class="lg:w-5/12 w-full order-2 lg:order-1 p-6 bg-white shadow-lg rounded-lg bg-opacity-80">
         <h2 class="text-2xl font-bold mb-2">Connectez</h2>
-        <p class="text-sm text-gray-600 mb-4">Vous n'avez pas un compte? <a href="/Signup" class="text-blue-600 hover:underline">Inscrire ici</a></p>
+        <p class="text-sm text-gray-600 mb-4">Vous n'avez pas un compte? <a href="/Login" class="text-blue-600 hover:underline">Inscrire ici</a></p>
 
 <form action="/auth/login" method="POST" class="w-full">
 
