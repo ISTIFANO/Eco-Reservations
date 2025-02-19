@@ -1,0 +1,7 @@
+
+  [37;41m ERROR [39;49m Command "migrate/refresh" is not defined. Did you mean one of these?  
+
+  [90m⇂ migrate:fresh[39m  
+  [90m⇂ migrate:refresh[39m  
+  [90m⇂ migrate:reset[39m  
+
