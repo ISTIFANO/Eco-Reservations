@@ -26,7 +26,8 @@ redirect('/salle')->with('succ','creation succefuly');
         return "salle";
     }
     public function show(){
+        $salle = Salle::get();
 
-        return view('reservations.show');
+        return view('reservations.show', compact('salle'));
     }
 }
