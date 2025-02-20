@@ -43,7 +43,9 @@
                                     <option value="banned">Banned</option>
                                     <option value="inactive">Inactive</option>
                                 </select>
-                                <button type="submit" name="id" value="{{$resevation->id}}" class="mt-2 bg-blue-500 text-white text-xs px-3 py-1 rounded-md hover:bg-blue-600 transition-colors duration-200">Edit Status</button>
+                                <input type="hidden" name="id" value="{{$resevation->id}}" >
+
+                                <button type="submit"   class="mt-2 bg-blue-500 text-white text-xs px-3 py-1 rounded-md hover:bg-blue-600 transition-colors duration-200">Edit Status</button>
                             </form>
                         </td> 
                     </tr>

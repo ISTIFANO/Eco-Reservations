@@ -37,6 +37,7 @@ class AuthController extends Controller{
             'email' => $request->email,
             'password' => $request->password,
             ];
+
             // $user = $request->only('email','password');
 
 
@@ -45,6 +46,15 @@ class AuthController extends Controller{
                }
                 return back()->with('error', 'Email or Password not succ');
                 }
+
+
+                
+                public function logout()
+                {
+                    Auth::logout();
+                    return redirect('/login');
+                }
+                
     }
 
 
