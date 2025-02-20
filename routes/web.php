@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\SalleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,8 @@ Route::post('/Sallecreate',[SalleController::class,'store']);
 Route::get('/sales/delete/{id}',[SalleController::class,'destroy']);
 Route::get('/sales/edit/{id}',[SalleController::class,'EditForm']);
 Route::post('/update',[SalleController::class,'update']);
+
+Route::get('/validate',[ReservationController::class,'show']);
 
 
 

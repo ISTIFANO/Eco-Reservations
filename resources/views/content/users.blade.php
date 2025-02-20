@@ -26,7 +26,9 @@
                         <th class="py-3 px-4 text-left">lastname</th>
                         <th class="py-3 px-4 text-left">email</th>
                         <th class="py-3 px-4 text-left">phone</th>
+                        <th class="py-3 px-4 text-center">Role</th>
                         <th class="py-3 px-4 text-center">Actions</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -37,6 +39,8 @@
                         <td class="py-3 px-4">{{$users->lastname}}</td>
                         <td class="py-3 px-4">{{$users->email}}</td>
                         <td class="py-3 px-4">{{$users->phone}}</td>
+                        <td class="py-3 px-4">{{$users->role->role_name}}</td>
+
                         <td class="py-3 px-4 text-center">
                             <a href="/userss/update/{{$users->id}}" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors mr-2">
                                 <i class="fas fa-pencil-alt"></i> <!-- Pencil icon for Update -->
