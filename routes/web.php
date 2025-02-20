@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SalleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('salle',SalleController::class);
+Route::post('/register',[AuthController::class,'register']);
+Route::get('/users',[UserController::class,'show']);
+
+Route::post('/AuthLogin',[AuthController::class,'AuthLogin']);
+Route::get('/Admin',[SalleController::class,'index']);
+Route::get('/Tsalle',[SalleController::class,'Tsalle']);
+
+
+
+
 Route::get('/', function () {
     return view('pages.Home');
 });

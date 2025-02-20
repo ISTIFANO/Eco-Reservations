@@ -18,9 +18,8 @@
         <h2 class="text-2xl font-bold mb-2">Connectez</h2>
         <p class="text-sm text-gray-600 mb-4">Vous n'avez pas un compte? <a href="/Signup" class="text-blue-600 hover:underline">Inscrire ici</a></p>
 
-<form action="/auth/login" method="POST" class="w-full">
-
-    
+<form action="/AuthLogin" method="POST" class="w-full">
+@csrf
     <div class="form-element mb-4">
         <label for="email" class="block text-gray-700 mb-2">Email</label>
         <input type="email" name="email" required placeholder="email@example.com" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />

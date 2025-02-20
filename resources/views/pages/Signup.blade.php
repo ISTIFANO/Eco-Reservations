@@ -18,12 +18,12 @@
         <h2 class="text-2xl font-bold mb-2">Connectez</h2>
         <p class="text-sm text-gray-600 mb-4">Vous n'avez pas un compte? <a href="/Login" class="text-blue-600 hover:underline">Inscrire ici</a></p>
 
-<form action="/auth/login" method="POST" class="w-full">
-
+<form action="/register" method="POST" class="w-full">
+@csrf
     
 <div class="form-element mb-4">
               <label for="firstname" class="block text-gray-700 mb-2">Prenom</label>
-              <input type="text" name="firstname" required placeholder="Prenom" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+              <input type="text" name="name" required placeholder="Prenom" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
 
             <div class="form-element mb-4">
@@ -45,6 +45,7 @@
               <label for="password" class="block text-gray-700 mb-2">Mot de pass</label>
               <input type="password" name="password" required placeholder="Entrer Votre mot de pass" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
+            <input type="hidden" name="role_id" value="2" required placeholder="Entrer Votre mot de pass" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
 
             <div class="form-element mb-4">
               <input type="submit" class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500" value="Sign Up">

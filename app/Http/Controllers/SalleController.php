@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class SalleController extends Controller
 {
+public function index(){
+
+
+    return view('pages.Admin');
+
+}
    
     public function store(Request $request){
 
@@ -29,5 +35,12 @@ redirect('/salle')->with('succ','creation succefuly');
         $salle = Salle::get();
 
         return view('reservations.show', compact('salle'));
+    }
+
+    public function Tsalle(){
+       
+        $Tsalle = Salle::all();
+
+        return view('content.Tsale', compact('Tsalle'));
     }
 }

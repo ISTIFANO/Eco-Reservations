@@ -14,21 +14,21 @@ class AuthController extends Controller{
 
     public function register(Request $request){
 
-        $data = $request->validate(['name'=>'required','email'=>'required','password'=>'required','role_id'=>'required','phone'=>'required','lastname'=>'required']);
+        // $data = $request->validate(['name'=>'required','email'=>'required','password'=>'required','role_id'=>'required','phone'=>'required','lastname'=>'required']);
 
        $register = new User;
         $register->name = $request->name;
 
         $register->email = $request->email;
-    $register->password = Hash::make($request->password);
+         $register->password = Hash::make($request->password);
 
         $register->role_id = $request->role_id;
         $register->phone=$request->phone;
 
         $register->lastname = $request->lastname;
-        $register->save();
+        $register->save(); 
 
-        return back()->with('success', 'Register successfully'); 
+        return redirect('/Login')->with('succ', 'Login succ');
     }
 
     public function AuthLogin(Request $request){
@@ -37,8 +37,11 @@ class AuthController extends Controller{
             'email' => $request->email,
             'password' => $request->password,
             ];
+            // $user = $request->only('email','password');
+
+
       if (Auth::attempt($user)) {
-                return redirect('/reservation')->with('succ', 'Login succ');
+                return redirect('/salle/show')->with('succ', 'Login succ');
                }
                 return back()->with('error', 'Email or Password not succ');
                 }
