@@ -56,8 +56,7 @@
         <div class="bg-white p-6 rounded-xl shadow-sm">
 
             @yield('content')
-            {{-- @yield('content')
-            @yield('footer') --}}
+     
     </div>
       </div>
     </div>

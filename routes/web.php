@@ -22,6 +22,13 @@ Route::get('/users',[UserController::class,'show']);
 Route::post('/AuthLogin',[AuthController::class,'AuthLogin']);
 Route::get('/Admin',[SalleController::class,'index']);
 Route::get('/Tsalle',[SalleController::class,'Tsalle']);
+Route::post('/Sallecreate',[SalleController::class,'store']);
+
+Route::get('/sales/delete/{id}',[SalleController::class,'destroy']);
+Route::get('/sales/edit/{id}',[SalleController::class,'EditForm']);
+Route::post('/update',[SalleController::class,'update']);
+
+
 
 
 

@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Salle extends Model
 {
-    protected $fillable=['id','title','description','location','number','start_date','status','updated_at','created_at','images'];
+    protected $fillable=['id','title','description','location','number','start_date','status','images'];
     use HasFactory;
 
 public function  user()  {

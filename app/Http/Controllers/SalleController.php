@@ -16,21 +16,54 @@ public function index(){
    
     public function store(Request $request){
 
-$data = $request->validate(['titre'=>'required','description'=>'required','location'=>'required','number'=>'required','start_date'=>'required','start_date'=>'required','status'=>'required']);
+// $data = $request->validate(['titre'=>'required','description'=>'required','location'=>'required','number'=>'required','status'=>'required','images'=>'required']);
 
-$createSalle = Salle::create($data);
 
-redirect('/salle')->with('succ','creation succefuly');
+Salle::create($request->all());
+
+// $createSalle = Salle::create($request);
+
+return redirect('/Tsalle')->with('succ','creation succefuly');
 
     }
-    public function destroy($id){
+    public function destroy(Request $request){
+     
+        if($request['id']){
 
-        return "salle";
+          $salles = Salle::find($request['id']);
+          $salles->delete();
+        }
+        return back()->with('succ', 'deleted  succ');
     }
-    public function edit($id){
 
-        return "salle";
+    public function EditForm(Request $request){
+        $salle = Salle::find($request['id']);
+
+        return view('content.Salleform', compact('salle'));
+
+        
     }
+//     public function update(Request $request)
+// {
+//     $post = Salle::find($request->id);
+//     if (!$post) {
+//         return back()->with('error', 'Post not found');
+//     }
+//     $post->update($request->all());
+//     return redirect('/Tsalle');
+// }
+public function update(Request $request)
+    {
+        // die($request['id']);
+        
+        $salle = Salle::find($request['id']);
+
+        // dd($salle);
+        $salle->update($request->all());
+        
+            return redirect('/Tsalle')->with('success', 'updated successfully');
+    }
+
     public function show(){
         $salle = Salle::get();
 
