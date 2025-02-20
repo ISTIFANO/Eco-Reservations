@@ -1,4 +1,4 @@
-@extends('pages.Admin');
+@extends('pages.Admin')
 
 
 @section('content')

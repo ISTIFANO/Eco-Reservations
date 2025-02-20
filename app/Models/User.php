@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Models\Role;
+use App\Models\Reservation;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -26,11 +28,22 @@ class User extends Authenticatable
         'role_id',
         'phone',
     ];
-
-    public function resevations()
+    public function role()
     {
-        return $this->hasMany(Reservation::class);
+        return $this->haseOne(Role::class);
     }
+
+    public function salles()
+    {
+        return $this->belongsToMany(salle::class);
+    }
+
+    public function reservation()
+    {
+        return $this->haseMany(Reservation::class);
+    }
+    
+
 
     /**
      * The attributes that should be hidden for serialization.
