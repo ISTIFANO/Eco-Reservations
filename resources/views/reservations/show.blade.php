@@ -9,14 +9,49 @@
 </head>
 <body class="bg-gray-50 font-[Poppins]">
     <!-- Header Section -->
-    <header class="bg-white shadow-sm py-6 mb-8">
         <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-bold text-gray-800">Available Rooms</h1>
-            <p class="text-gray-600 mt-2">Find and book your perfect room</p>
+            <!-- Top Bar -->
+            <div class="flex justify-between items-center py-4 border-b border-gray-100">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                    <span class="text-xl font-semibold text-gray-800">Eco-reservation</span>
+                </div>
+    
+                <div class="flex items-center space-x-6">
+               
+                    <button id="openModal" class="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                        <span>Profile</span>
+                    </button>
+                </div>
+            </div>
+    
+            <div class="py-8">
+                <h1 class="text-4xl font-bold text-gray-800 mb-3">Available Rooms</h1>
+                <div class="flex items-center justify-between">
+                    <p class="text-gray-600">Find and book your perfect room</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center text-gray-500">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z"/>
+                            </svg>
+                            <span>24 rooms available</span>
+                        </div>
+                        <div class="flex items-center text-gray-500">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span>Updated 5 mins ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <!-- Main Content -->
     <div class="container mx-auto px-4 pb-12">
         <div class="mb-8 bg-white p-4 rounded-lg shadow-sm">
             <div class="flex flex-wrap gap-4 items-center">
@@ -25,11 +60,9 @@
             </div>
         </div>
 
-        <!-- Rooms Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach($salle as $salles)
             <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:transform hover:scale-[1.02]">
-                <!-- Room Image -->
                 <div class="relative">
                     <img src="{{$salles->images}}" alt="{{$salles->title}}" class="w-full h-56 object-cover">
                     <div class="absolute top-4 right-4">

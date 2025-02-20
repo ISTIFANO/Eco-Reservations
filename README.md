@@ -15,3 +15,11 @@ j ai apris comment travailer avec seeder and factory pour insert fake data
 j ai comprie Eloquent: Relationships  avec m.abdelkabir d apres live coding
 
 # j ai afficher les salle , et l acreation d authentification , et home page  
+
+
+##day 4 (voire les commit )
+
+* j ai fait le crud du salle 
+*client peut faire une reservation 
+*l admin peut valider les reservation 
+

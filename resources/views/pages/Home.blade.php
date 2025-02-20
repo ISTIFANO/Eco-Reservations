@@ -16,11 +16,11 @@
                 <span class="text-2xl font-bold text-white ml-2">Eco<span >Reservation</span></span>
             </div>
             <nav class="hidden md:flex space-x-6">
-                <a href="#" class="text-[#ffb300] font-semibold">ACCUEIL</a>
-                <a href="#" class="text-white">À PROPOS</a>
-                <a href="/client" class="text-white">OFFRES</a>
-                <a href="#" class="text-white">CALENDRIER</a>
-                <a href="#" class="text-white">CONTACT</a>
+                <a href="/salle/show" class="text-[#ffb300] font-semibold">ACCUEIL</a>
+                <a href="/salle/show" class="text-white">À PROPOS</a>
+                <a href="/salle/show" class="text-white">OFFRES</a>
+                <a href="/salle/show" class="text-white">CALENDRIER</a>
+                <a href="/salle/show" class="text-white">CONTACT</a>
             </nav>
            <div>
             <a href="/Login" class="bg-blue-500 text-white px-4 py-2 text-sm rounded-md shadow hover:bg-blue-600">Connectez</a>
@@ -37,8 +37,8 @@
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Nous connectons les gens pour donner vie à des projets</h1>
             <p class="text-lg mb-6">Trouvez des talents de haute qualité ou des emplois ouverts à l'aide d'outils d'IA qui vous permettent de garder le contrôle.</p>
             <div class="flex space-x-4">
-                <a href="#" class="bg-teal-500 text-white px-6 py-3 rounded-md shadow hover:bg-teal-600">En Savoir Plus</a>
-                <a href="#" class="bg-white text-gray-800 px-6 py-3 rounded-md shadow hover:bg-gray-200">Rejoignez-Nous</a>
+                <a href="/salle/show" class="bg-teal-500 text-white px-6 py-3 rounded-md shadow hover:bg-teal-600">En Savoir Plus</a>
+                <a href="/salle/show" class="bg-white text-gray-800 px-6 py-3 rounded-md shadow hover:bg-gray-200">Rejoignez-Nous</a>
             </div>
         </div>
     </main>
