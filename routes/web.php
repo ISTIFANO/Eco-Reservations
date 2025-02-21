@@ -26,6 +26,7 @@ Route::get('/Admin',[SalleController::class,'index']);
 Route::get('/Tsalle',[SalleController::class,'Tsalle']);
 Route::post('/Sallecreate',[SalleController::class,'store']);
 Route::post('/ApplayReservation',[ReservationController::class,'ApplayReservation']);
+Route::post('/reservations/delete',[ReservationController::class,'delete']);
 
 
 Route::get('/sales/delete/{id}',[SalleController::class,'destroy']);

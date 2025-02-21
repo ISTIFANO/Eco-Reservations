@@ -28,9 +28,10 @@
                         <td class="py-3 px-4">{{ $reservation->salle->location }}</td>
                         <td class="py-3 px-4">{{ $reservation->salle->number }}</td>
                         <td class="py-3 px-4 text-center">
-                        
-                            <form action="/reservations/delete/{{ $reservation->id }}" method="GET" class="inline-block">
+
+                            <form action="/reservations/delete" method="POST" class="inline-block">
                                 @csrf
+                                <input type="hidden" value="{{ $reservation->id }}" name="id">
                                 <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors">
 Annuler
 

@@ -16,10 +16,14 @@ class ReservationController extends Controller
         return redirect('/Tsalle')->with('succ', 'creation succefuly');
     }
 
-    public function update($id)
+    public function delete(Request $request)
     {
+     
 
-        return "reservation";
+            $salles = Reservation::find($request['id']);
+            $salles->delete();
+
+            return back();
     }
     public function show()
     {
@@ -37,7 +41,7 @@ class ReservationController extends Controller
     {
         $id=1;
         $ids = ['user_id'=>$id];
-        $mesreservation = Reservation::find($ids);
+        $mesreservation = Reservation::where('user_id', $ids)->get();
 
 
         foreach ($mesreservation as $resevations) {
