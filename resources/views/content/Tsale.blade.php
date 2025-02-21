@@ -15,7 +15,7 @@
 <body class="bg-gray-100">
 
     <div class="container mx-auto p-8">
-        <button  class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">+ Publier une Salle</button>
+        <button id="openModal" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">+ Publier une Salle</button>
 
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Sales Dashboard</h2>
         
@@ -58,7 +58,7 @@
                 </tbody>
             </table>
         </div>
-        <script>
+        {{-- <script>
             const modal = document.getElementById("jobModal");
             const openModal = document.getElementById("openModal");
             const closeModal = document.getElementById("closeModal");
@@ -73,7 +73,7 @@
             });
             
             
-        </script>
+        </script> --}}
         <div id="jobModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
             <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
                 <h2 class="text-xl font-bold mb-4">Publier une offre</h2>
@@ -118,6 +118,18 @@
             </div>
         </div>
     </div>
+    <script>const modal = document.getElementById("jobModal");
+        const openModal = document.getElementById("openModal");
+        const closeModal = document.getElementById("closeModal");
+        
+        openModal.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+        });
+        
+        closeModal.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        });
+        </script>
    
 </body>
 </html>

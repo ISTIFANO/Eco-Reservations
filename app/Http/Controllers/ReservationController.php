@@ -12,20 +12,40 @@ class ReservationController extends Controller
 
     public function ApplayReservation(Request $request)
     {
-        Reservation::create($request->all());
-        return redirect('/Tsalle')->with('succ', 'creation succefuly');
+        if (count(Reservation::where('salle_id', $request['salle_id'])->get()) == 0) {
+            Reservation::create($request->all());
+            return redirect('/Tsalle')->with('succ', 'Creation successful');
+        } else {
+            $reservations = Reservation::where('salle_id', $request['salle_id'])->get();
+
+            // dd("vghbhhbbh");
+            foreach ($reservations as $reservation) {
+                if ($request['date_start'] >= $reservation->date_start && $request['date_start'] <= $reservation->date_fin) {
+                    return redirect()->back();
+                }
+                if ($request['date_fin'] >= $reservation->date_start && $request['date_fin'] <= $reservation->date_fin) {
+                    return redirect()->back();  
+                }
+                if ($request['date_start'] <= $reservation->date_start && $request['date_fin'] >= $reservation->date_fin) {
+                    return redirect()->back();
+                }
+            }
+            Reservation::create($request->all());
+            return redirect('/Tsalle');
+        }
     }
+
 
     public function delete(Request $request)
     {
-     
 
-            $salles = Reservation::find($request['id']);
-            $salles->delete();
 
-            return back();
+        $salles = Reservation::find($request['id']);
+        $salles->delete();
+
+        return back();
     }
-    
+
     public function show()
     {
         $resevation = Reservation::get();
@@ -40,8 +60,8 @@ class ReservationController extends Controller
 
     public function mesreservation()
     {
-        $id=1;
-        $ids = ['user_id'=>$id];
+        $id = 1;
+        $ids = ['user_id' => $id];
         $mesreservation = Reservation::where('user_id', $ids)->get();
 
 
