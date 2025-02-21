@@ -25,6 +25,7 @@ class ReservationController extends Controller
 
             return back();
     }
+    
     public function show()
     {
         $resevation = Reservation::get();

@@ -58,6 +58,22 @@
                 </tbody>
             </table>
         </div>
+        <script>
+            const modal = document.getElementById("jobModal");
+            const openModal = document.getElementById("openModal");
+            const closeModal = document.getElementById("closeModal");
+            const projectsContainer = document.getElementById("projects");
+            
+            openModal.addEventListener("click", () => {
+                modal.classList.remove("hidden");
+            });
+            
+            closeModal.addEventListener("click", () => {
+                modal.classList.add("hidden");
+            });
+            
+            
+        </script>
         <div id="jobModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
             <div class="bg-white p-6 rounded-lg shadow-lg w-1/3">
                 <h2 class="text-xl font-bold mb-4">Publier une offre</h2>
@@ -102,22 +118,7 @@
             </div>
         </div>
     </div>
-    <script>
-        const modal = document.getElementById("jobModal");
-        const openModal = document.getElementById("openModal");
-        const closeModal = document.getElementById("closeModal");
-        const projectsContainer = document.getElementById("projects");
-        
-        openModal.addEventListener("click", () => {
-            modal.classList.remove("hidden");
-        });
-        
-        closeModal.addEventListener("click", () => {
-            modal.classList.add("hidden");
-        });
-        
-        
-    </script>
+   
 </body>
 </html>
 @endsection
