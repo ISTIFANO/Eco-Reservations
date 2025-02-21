@@ -33,17 +33,16 @@ class AuthController extends Controller{
 
     public function AuthLogin(Request $request){
 
-        $user = [
-            'email' => $request->email,
-            'password' => $request->password,
-            ];
+       
 
             // $user = $request->only('email','password');
+// dd($user);
+// Auth::attempt($user)
 
-
-      if (Auth::attempt($user)) {
+      if (User::find($request["email"]) && User::find($request["password"] )) {
                 return redirect('/salle/show')->with('succ', 'Login succ');
                }
+               dd(User::find($request["email"]));
                 return back()->with('error', 'Email or Password not succ');
                 }
 
@@ -52,7 +51,7 @@ class AuthController extends Controller{
                 public function logout()
                 {
                     Auth::logout();
-                    return redirect('/login');
+                    return redirect('/Login');
                 }
                 
     }

@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('salle',SalleController::class);
 Route::post('/register',[AuthController::class,'register']);
 Route::get('/users',[UserController::class,'show']);
+Route::get('/Auth/logout',[AuthController::class,'logout']);
 
 Route::post('/AuthLogin',[AuthController::class,'AuthLogin']);
 Route::get('/Admin',[SalleController::class,'index']);
@@ -30,6 +31,9 @@ Route::post('/ApplayReservation',[ReservationController::class,'ApplayReservatio
 Route::get('/sales/delete/{id}',[SalleController::class,'destroy']);
 Route::get('/sales/edit/{id}',[SalleController::class,'EditForm']);
 Route::post('/update',[SalleController::class,'update']);
+Route::get('/mesreservation',[ReservationController::class,'mesreservation']);
+Route::get('/Profile',[UserController::class,'profile']);
+Route::post('/user/update',[UserController::class,'update']);
 
 Route::get('/validate',[ReservationController::class,'show']);
 Route::post('/Rvalidation',[ReservationController::class,'Rvalidation']);

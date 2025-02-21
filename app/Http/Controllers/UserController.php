@@ -24,8 +24,21 @@ foreach($utilisateur as $users){
 
     return view('content.users',compact('utilisateur'));
 }
-    public function store(){
+    public function profile(){
+        $request=1;
+        $userinfos = User::find($request);
+        return view('client.profile',compact('userinfos'));
+    }
+    public function update(Request $request){
+        $id=1;
 
-        return "user";
+        $salle = User::find($id);
+
+        // dd($salle);
+        $salle->update($request->all());
+        
+            return back();
+
+
     }
 }
